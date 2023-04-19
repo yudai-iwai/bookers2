@@ -9,6 +9,38 @@
         <% else %>
          <%= image_tag 'no_image',size: "100x100" %>
         <% end %>
+        <table class="table">
+          <tbody>
+            <tr></tr>
+            <tr>
+              <th>name</th>
+              <th><%= current_user.user_name %></th>
+            </tr>
+            <tr>
+              <th>introduction</th>
+              <th><<%= current_user.user_introduction %></th>
+            </tr>
+          </tbody>
+        </table>
+        <div class="row">
+          <a class="btn btn-outline-secondary btn-block edit_user" href="/users/id/edit">
+          <i class="fas fa-user-cog"></i>
+          </a>
+        </div>
+        <h2 class="mt-3">New book</h2>
+        <%= form_with model: book.new do |f| %>
+          <div class="form-group">
+            <label for="book_title">Title</label>
+            <%= f.text_field :title %>
+          </div>
+          <div class="form-group">
+            <label for="book_opinion">Opinion</label>
+            <%= f.text_area :body %>
+          </div>
+          <div class="form-group">
+            <%= f.submit 'Create Book' %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
