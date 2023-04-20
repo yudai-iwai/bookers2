@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-        <%= render'userinfo', user: @user, book: @book %>
+        <%= render'userinfo', user: @user, book: @newbook %>
       </div>
       <div class="col-md-8 offset-md-1">
         <h2>Book detail</h2>
@@ -11,10 +11,10 @@
           <tbody>
             <tr>
               <td>
-                <%= image_tag @book.user.get_profile_image(100,100) %>
+                <%= image_tag @book.user.get_profile_image(100,100) %><br/>
               </td>
               <td>
-                <%= current_user.name %>
+                <%= @user.name %>
               </td>
               <td>
                 <%= @book.title %>

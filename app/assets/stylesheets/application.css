@@ -23,7 +23,7 @@ label{
 }
 
 .form-group{
-  margin-bottom: 1rem;
+  display: block
 }
 
 .form-control{
